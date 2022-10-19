@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Create a Node.js app for building production-ready RESTful APIs using Express, by running one command",
   "bin": "bin/createNodejsApp.js",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "repository": "",
   "author": "Olashina Quadri <olashina201@gmail.com>",
   "license": "MIT",
@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "pm2 start ecosystem.config.json --no-daemon",
-    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
     "test": "jest -i --colors --verbose --detectOpenHandles",
     "test:watch": "jest -i --watchAll",
     "coverage": "jest -i --coverage",
