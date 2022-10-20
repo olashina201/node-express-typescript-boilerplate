@@ -60,7 +60,7 @@ userSchema.plugin(paginate);
  * @param {ObjectId} [excludeUserId] - The id of the user to be excluded
  * @returns {Promise<boolean>}
  */
-userSchema.statics.isEmailTaken = async function (email, excludeUserId) {
+userSchema.statics.isEmailTaken = async function (email: string, excludeUserId: any): Promise<boolean> {
   const user = await this.findOne({ email, _id: { $ne: excludeUserId } });
   return !!user;
 };
@@ -70,7 +70,7 @@ userSchema.statics.isEmailTaken = async function (email, excludeUserId) {
  * @param {string} password
  * @returns {Promise<boolean>}
  */
-userSchema.methods.isPasswordMatch = async function (password) {
+userSchema.methods.isPasswordMatch = async function (password: string): Promise<boolean> {
   const user = this;
   return bcrypt.compare(password, user.password);
 };
