@@ -11,6 +11,8 @@
       "strictNullChecks": false,
       "noImplicitThis": true,
       "alwaysStrict": true,
+      "skipLibCheck": true,
+      "skipDefaultLibCheck": true,
       "noUnusedLocals": true,
       "noUnusedParameters": false,
       "noImplicitReturns": true,

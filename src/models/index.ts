@@ -1,2 +1,7 @@
-export { default as Token } from './token.model';
-export { default as User } from './user.model';
+import Token from './token.model';
+import User from './user.model';
+
+export default {
+    Token,
+    User,
+};

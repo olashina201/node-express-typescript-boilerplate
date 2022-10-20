@@ -8,7 +8,7 @@ import passport from 'passport';
 import httpStatus from 'http-status';
 import config from './config/config';
 import morgan from './config/morgan';
-import jwtStrategy from './config/passport';
+// import jwtStrategy from './config/passport';
 // import authLimiter from './middlewares/rateLimiter';
 import routes from './routes/v1';
 import ApiError from './utils/ApiError';
@@ -42,7 +42,7 @@ app.options('*', cors());
 
 // jwt authentication
 app.use(passport.initialize());
-passport.use('jwt', jwtStrategy);
+// passport.use('jwt', jwtStrategy);
 
 // limit repeated failed requests to auth endpoints
 if (config.env === 'production') {
