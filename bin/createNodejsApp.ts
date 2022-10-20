@@ -4,15 +4,16 @@ const path = require('path');
 const fs = require('fs');
 const { execSync } = require('child_process');
 
+// export {}
 // Utility functions
 const exec = util.promisify(require('child_process').exec);
-async function runCmd(command) {
+async function runCmd(command: string) {
   try {
     const { stdout, stderr } = await exec(command);
     console.log(stdout);
     console.log(stderr);
   } catch {
-    (error) => {
+    (error: any) => {
       console.log(error);
     };
   }
@@ -46,7 +47,7 @@ const repo = 'https://github.com/hagopj13/node-express-boilerplate.git';
 // Check if directory already exists
 try {
   fs.mkdirSync(appPath);
-} catch (err) {
+} catch (err: any) {
   if (err.code === 'EEXIST') {
     console.log('Directory already exists. Please choose another name for the project.');
   } else {

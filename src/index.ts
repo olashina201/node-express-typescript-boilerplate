@@ -3,7 +3,7 @@ const app = require('./app');
 const config = require('./config/config');
 const logger = require('./config/logger');
 
-let server;
+let server: any;
 mongoose.connect(config.mongoose.url, config.mongoose.options).then(() => {
   logger.info('Connected to MongoDB');
   server = app.listen(config.port, () => {
@@ -22,7 +22,7 @@ const exitHandler = () => {
   }
 };
 
-const unexpectedErrorHandler = (error) => {
+const unexpectedErrorHandler = (error: any) => {
   logger.error(error);
   exitHandler();
 };
