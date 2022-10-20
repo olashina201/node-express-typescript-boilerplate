@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import validator from 'validator';
-import bcrypt from 'bcryptjs';
+// import bcrypt from 'bcryptjs';
 import { toJSON, paginate } from './plugins';
 import roles from '../config/roles';
 
@@ -70,18 +70,18 @@ userSchema.statics.isEmailTaken = async function (email: string, excludeUserId: 
  * @param {string} password
  * @returns {Promise<boolean>}
  */
-userSchema.methods.isPasswordMatch = async function (password: string): Promise<boolean> {
-  const user = this;
-  return bcrypt.compare(password, user.password);
-};
+// userSchema.methods.isPasswordMatch = async function (password: string): Promise<boolean> {
+//   const user = this;
+//   return bcrypt.compare(password, user.password);
+// };
 
-userSchema.pre('save', async function (next) {
-  const user = this;
-  if (user.isModified('password')) {
-    user.password = await bcrypt.hash(user.password, 8);
-  }
-  next();
-});
+// userSchema.pre('save', async function (next) {
+//   const user = this;
+//   if (user.isModified('password')) {
+//     user.password = await bcrypt.hash(user.password, 8);
+//   }
+//   next();
+// });
 
 /**
  * @typedef User
