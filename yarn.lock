@@ -977,6 +977,11 @@
     "@types/express" "*"
     "@types/serve-static" "*"
 
+"@types/validator@^13.7.8":
+  "integrity" "sha512-HKayOBe2ThTcQykiycCQYf70Fvo0WaJEJdxxNjvX3D/mnC0IUAhMe6wsIb1wwthmjiqBAR3qGkEzHYx74MS2yw=="
+  "resolved" "https://registry.npmjs.org/@types/validator/-/validator-13.7.8.tgz"
+  "version" "13.7.8"
+
 "@types/yargs-parser@*":
   "integrity" "sha512-7tFImggNeNBVMsn0vLrpn1H1uPrUBdnARPTpZoitY37ZrdJREzf7I16tMrlK3hen349gr1NYh8CmZQa7CTG6Aw=="
   "resolved" "https://registry.npmjs.org/@types/yargs-parser/-/yargs-parser-20.2.1.tgz"

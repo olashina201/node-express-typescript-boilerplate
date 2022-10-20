@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-const { toJSON } = require('./plugins');
-const { tokenTypes } = require('../config/tokens');
+import mongoose from 'mongoose';
+import { tokenTypes } from '../config/tokens';
+import { toJSON } from './plugins';
 
-const tokenSchema = mongoose.Schema(
+const tokenSchema = new mongoose.Schema(
   {
     token: {
       type: String,
@@ -41,4 +41,4 @@ tokenSchema.plugin(toJSON);
  */
 const Token = mongoose.model('Token', tokenSchema);
 
-module.exports = Token;
+export default Token;
