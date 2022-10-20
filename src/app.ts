@@ -9,9 +9,8 @@ import httpStatus from 'http-status';
 import config from './config/config';
 import morgan from './config/morgan';
 import jwtStrategy from './config/passport';
-import authLimiter from './middlewares/rateLimiter';
+// import authLimiter from './middlewares/rateLimiter';
 import routes from './routes/v1';
-import { errorConverter, errorHandler } from './middlewares/error';
 import ApiError from './utils/ApiError';
 
 const app = express();
@@ -47,7 +46,7 @@ passport.use('jwt', jwtStrategy);
 
 // limit repeated failed requests to auth endpoints
 if (config.env === 'production') {
-  app.use('/v1/auth', authLimiter);
+  app.use('/v1/auth');
 }
 
 // v1 api routes
@@ -59,9 +58,9 @@ app.use((req, res, next) => {
 });
 
 // convert error to ApiError, if needed
-app.use(errorConverter);
+// app.use(errorConverter);
 
 // handle error
-app.use(errorHandler);
+// app.use(errorHandler);
 
-module.exports = app;
+export default app;
