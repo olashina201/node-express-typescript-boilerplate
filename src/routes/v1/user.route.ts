@@ -11,10 +11,11 @@ router
   .post(auth('manageUsers'), validate(userValidation.createUser), userController.createUser)
   .get(auth('getUsers'), validate(userValidation.getUsers), userController.getUsers);
 
+router.route('/profile').get(auth('/getProfile'), validate(userValidation.getUser), userController.getProfile);
+
 router
   .route('/:userId')
   .get(auth('getUsers'), validate(userValidation.getUser), userController.getUser)
-  .get(auth('getProfile'), validate(userValidation.getUser), userController.getProfile)
   .patch(auth('manageUsers'), validate(userValidation.updateUser), userController.updateUser)
   .delete(auth('manageUsers'), validate(userValidation.deleteUser), userController.deleteUser);
 
@@ -254,9 +255,9 @@ export default router;
 
 /**
  * @swagger
- * /user:
+ * /users/profile:
  *   get:
- *     summary: Get all users
+ *     summary: Get logged in user
  *     description: Only admins can retrieve all users.
  *     tags: [Users]
  *     security:
