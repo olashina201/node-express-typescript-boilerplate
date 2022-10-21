@@ -33,6 +33,10 @@ const getUserById = async (id) => {
   return User.findById(id);
 };
 
+const getProfile = async (userId) => {
+  return User.findById(userId);
+};
+
 /**
  * Get user by email
  * @param {string} email
@@ -78,6 +82,7 @@ const deleteUserById = async (userId) => {
 export default {
   createUser,
   queryUsers,
+  getProfile,
   getUserById,
   getUserByEmail,
   updateUserById,
