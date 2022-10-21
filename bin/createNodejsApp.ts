@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-const util = require('util');
-const path = require('path');
-const fs = require('fs');
-const { execSync } = require('child_process');
+import util from 'util';
+import path from 'path';
+import fs from 'fs';
+import { execSync } from 'child_process';
 
 // export {}
 // Utility functions

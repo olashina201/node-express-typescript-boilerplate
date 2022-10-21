@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import validator from 'validator';
 // import bcrypt from 'bcryptjs';
 import { toJSON, paginate } from './plugins';
-import roles from '../config/roles';
+// import roles from '../config/roles';
 
 const userSchema = new mongoose.Schema(
   {
@@ -35,19 +35,16 @@ const userSchema = new mongoose.Schema(
       },
       private: true, // used by the toJSON plugin
     },
-    role: {
-      type: String,
-      enum: roles,
-      default: 'user',
-    },
+    // role: {
+    //   type: String,
+    //   enum: roles,
+    //   default: 'user',
+    // },
     isEmailVerified: {
       type: Boolean,
       default: false,
     },
   },
-  {
-    timestamps: true,
-  }
 );
 
 // add plugin that converts mongoose to json
