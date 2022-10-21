@@ -2,6 +2,7 @@ import express from 'express';
 import authRoute from './auth.route';
 import docsRoute from './docs.route';
 import userRoute from './user.route';
+import config from '../../config/config';
 
 const router = express.Router();
 
